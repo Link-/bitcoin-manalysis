@@ -1,0 +1,5 @@
+# Ignore all raw data files
+_raw_data/
+
+# Ignore all checkpoint files
+*.ipynb_checkpoints
