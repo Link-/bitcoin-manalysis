@@ -6,11 +6,18 @@ Reddit is chosen as a focused source of news/events that have been deemed by the
 
 # Setup
 
-In order to get the best out of the Reddit API, Python Reddit API Wrapper (PRAW) is chosen as the tool with which to build the news data repository.
+In order to scrap the data from Reddit, it's as simple as calling a url that returns data in JSON format.
+For now we're only interest in what made it to the 'hot' section.
 
-__PRAW__ works with python 2.6, 2.7, 3.1, 3.2, 3.3, and 3.4. The recommended way to install is via pip
-
-	pip install praw
+	http://reddit.com/r/bitcoin/hot.json
 	
-Documentation for __PRAW__ can be found here ([Link](https://praw.readthedocs.org/en/v2.1.21/))
+Use reddit's API cursor:
+
+	http://reddit.com/r/bitcoin/hot.json?after=t3_30dra4
+	
+There are no dependencies necessary other than the [Requests](http://docs.python-requests.org/en/latest/) library
+
+	$ pip install requests
+	
+More information on the installation steps ([Installation](http://docs.python-requests.org/en/latest/user/install/))
 
