@@ -19,7 +19,9 @@ import time
 import pprint
 
 DATA_DIR = '/Users/bassemd/Projects/bitcoin-manalysis/scrappers/reddit/_raw_data/'
-PARSE_CONF = {'subreddit': 'http://www.reddit.com/r/bitcoin/',
+PARSE_CONF = {'user-agent' : 'Bitcoin-analysis:v0.0.1 (by /u/Link-)',
+							'filename' : 'hot-bitcoin',
+							'subreddit': 'http://www.reddit.com/r/bitcoin/',
 							'flair': 'hot',
 							'format': 'json',
 							'timeout': 10,
@@ -34,7 +36,7 @@ def request_data(url, after=''):
 		suffix = '?after=%s' % after
 		url = url + suffix	
 	# Define the user-agent
-	headers = {'user-agent': 'Bitcoin-analysis:v0.0.1 (by /u/Link-)'}
+	headers = {'user-agent': PARSE_CONF['user-agent']}
 	# Intialize the request + timeout
 	r = requests.get(url, headers=headers, timeout=PARSE_CONF['timeout'])
 	# Debugging : Print status code
@@ -44,7 +46,10 @@ def request_data(url, after=''):
 
 def dump_info_file(content):
 	# Define the filename
-	curr_filename = '%shot-bitcoin-%s.%s' % (DATA_DIR, str(time.time()), 'json')
+	curr_filename = '%s%s%s.%s' % (DATA_DIR, \
+																 PARSE_CONF['filename'], \
+																 str(time.time()), \
+																 PARSE_CONF['format'])
 	# Write conent to file
 	with open(curr_filename, 'wb') as feed:
 		feed.write(content)
