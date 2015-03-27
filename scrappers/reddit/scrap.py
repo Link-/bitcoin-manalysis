@@ -25,7 +25,7 @@ PARSE_CONF = {'user-agent' : 'Bitcoin-analysis:v0.0.1 (by /u/Link-)',
 							'flair': 'hot',
 							'format': 'json',
 							'timeout': 10,
-							'depth': 10,
+							'depth': 3,
 							'sleep_thresh': 3}
 
 
