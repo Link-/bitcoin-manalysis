@@ -20,13 +20,13 @@ import pprint
 
 DATA_DIR = '/Users/bassemd/Projects/bitcoin-manalysis/scrappers/reddit/_raw_data/'
 PARSE_CONF = {'user-agent' : 'Bitcoin-analysis:v0.0.1 (by /u/Link-)',
-							'filename' : 'hot-bitcoin',
-							'subreddit': 'http://www.reddit.com/r/bitcoin/',
-							'flair': 'hot',
-							'format': 'json',
-							'timeout': 10,
-							'depth': 3,
-							'sleep_thresh': 3}
+			  'filename' : 'hot-bitcoin',
+			  'subreddit': 'http://www.reddit.com/r/bitcoin/',
+			  'flair': 'hot',
+			  'format': 'json',
+			  'timeout': 10,
+			  'depth': 3,
+			  'sleep_thresh': 3}
 
 
 def request_data(url, after=''):
@@ -47,9 +47,9 @@ def request_data(url, after=''):
 def dump_info_file(content):
 	# Define the filename
 	curr_filename = '%s%s%s.%s' % (DATA_DIR, \
-																 PARSE_CONF['filename'], \
-																 str(time.time()), \
-																 PARSE_CONF['format'])
+								   PARSE_CONF['filename'], \
+								   str(time.time()), \
+								   PARSE_CONF['format'])
 	# Write conent to file
 	with open(curr_filename, 'wb') as feed:
 		feed.write(content)
@@ -69,8 +69,8 @@ def get_data(url, after=''):
 def main():
 	# Initial url
 	url = '%s%s.%s' % (PARSE_CONF['subreddit'], \
-										 PARSE_CONF['flair'], \
-										 PARSE_CONF['format'])
+					   PARSE_CONF['flair'], \
+					   PARSE_CONF['format'])
 	# Initial data request
 	after_flag = get_data(url)
 	# Depth
