@@ -3,3 +3,6 @@ _raw_data/
 
 # Ignore all checkpoint files
 *.ipynb_checkpoints
+
+# Ignore all sublime text project files
+_sublime/
