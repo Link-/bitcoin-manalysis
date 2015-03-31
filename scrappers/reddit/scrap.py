@@ -12,20 +12,22 @@
 #
 # Note: This is hacked code 
 # in a rush so don't judge
+# 
+# Data Source: Subreddit /r/bitcoin
 
 import requests
 import json
 import time
 import pprint
 
-DATA_DIR = '/Users/bassemd/Projects/bitcoin-manalysis/scrappers/reddit/_raw_data/'
-PARSE_CONF = {'user-agent' : 'Bitcoin-analysis:v0.0.1 (by /u/Link-)',
+PARSE_CONF = {'raw_data_dir': '',
+			  'user-agent' : 'Bitcoin-analysis:v0.0.1 (by /u/Link-)',
 			  'filename' : 'hot-bitcoin',
 			  'subreddit': 'http://www.reddit.com/r/bitcoin/',
 			  'flair': 'hot',
 			  'format': 'json',
 			  'timeout': 10,
-			  'depth': 3,
+			  'depth': 1000,
 			  'sleep_thresh': 3}
 
 
@@ -46,11 +48,11 @@ def request_data(url, after=''):
 
 def dump_info_file(content):
 	# Define the filename
-	curr_filename = '%s%s%s.%s' % (DATA_DIR, \
+	curr_filename = '%s%s%s.%s' % (PARSE_CONF['raw_data_dir'], \
 								   PARSE_CONF['filename'], \
 								   str(time.time()), \
 								   PARSE_CONF['format'])
-	# Write conent to file
+	# Write content to file
 	with open(curr_filename, 'wb') as feed:
 		feed.write(content)
 
@@ -67,6 +69,8 @@ def get_data(url, after=''):
 	return after_flag
 
 def main():
+	# Fetching your DATAZ
+	print "... FETCHING YOUR DATAZ ..."
 	# Initial url
 	url = '%s%s.%s' % (PARSE_CONF['subreddit'], \
 					   PARSE_CONF['flair'], \

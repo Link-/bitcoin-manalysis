@@ -10,6 +10,11 @@ In order to get articles through the NYTimes API, you need to register for a (fr
 
 [API Overview](http://developer.nytimes.com/page)
 
+__Key Rate Limits__
+
+* 10 Calls per second
+* 10,000 Calls per day
+
 Another tool used for analysis is the interactive online [JSON Viewer](http://jsonviewer.stack.hu/)
 
 # Usage
@@ -18,3 +23,40 @@ Article Search Request URI (sample):
 
 	http://api.nytimes.com/svc/search/v2/articlesearch.json?q=bitcoin&fq=bitcoin&begin_date=20090101&sort=newest&page=0&api-key=<private key here>
 	
+
+	PARSE_CONF = {'raw_data_dir': '/Users/bassemd/Projects/bitcoin-manalysis/scrappers/nyt/_raw_data/',
+				'user-agent': 'Bit-Analyzer:v0.0.1',
+				'filename': 'nyt-bitcoin',
+				'url': 'http://api.nytimes.com/svc/search/v2/articlesearch',
+				'format': 'json',
+				'timeout': 10,
+				'start_depth': 0,				# you will thank me for this when the request times out
+				'depth': 10,					# returns depth+1 pages and start_depth+depth pages
+				'sleep_thresh': 3,
+				'query': 'bitcoin',
+				'sort': 'newest',
+				'begin_date': 20090101,			# yyyymmdd
+				'end_date': 20150303,			# yyyymmdd
+				'api_key': '6b345c4055c2693342b87179b136e7bd:10:71712593'}
+
+__Example__
+
+
+	PARSE_CONF = {'raw_data_dir': '/Users/bassemd/Projects/bitcoin-manalysis/scrappers/nyt/_raw_data/',
+				'user-agent': 'Bit-Analyzer:v0.0.1',
+				'filename': 'nyt-bitcoin',
+				'url': 'http://api.nytimes.com/svc/search/v2/articlesearch',
+				'format': 'json',
+				'timeout': 10,
+				'start_depth': 0,				# you will thank me for this when the request times out
+				'depth': 10,					# returns depth+1 pages and start_depth+depth pages
+				'sleep_thresh': 3,
+				'query': 'bitcoin',
+				'sort': 'newest',
+				'begin_date': 20090101,			# yyyymmdd
+				'end_date': 20150303,			# yyyymmdd
+				'api_key': '6b345c4055c2693342b87179b136e7bd:10:71712593'}
+
+## Risk
+
+This is a very VERY dirty code. Use it at your own risk (although it shouldn't do anything that weird...)
