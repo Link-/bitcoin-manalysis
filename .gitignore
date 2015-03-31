@@ -6,3 +6,6 @@ _raw_data/
 
 # Ignore all sublime text project files
 _sublime/
+
+# Ignore all xmind files
+*.xmind
