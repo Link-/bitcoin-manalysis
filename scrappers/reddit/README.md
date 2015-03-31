@@ -38,7 +38,7 @@ There's not much configuration to be done. Open `scrap.py` and modify the follow
 							
 __Example__:
 
-	DATA_DIR = '/Users/bassemd/Projects/bitcoin-manalysis/scrappers/reddit/_raw_data/'
+	DATA_DIR = '/Users/yourname/bitcoin-manalysis/scrappers/reddit/_raw_data/'
 	
 	PARSE_CONF = {'user-agent' : 'Bitcoin-analysis:v0.0.1 (by /u/Link-)',
 				  'filename' : 'hot-bitcoin',

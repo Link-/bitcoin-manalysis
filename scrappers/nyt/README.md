@@ -24,7 +24,7 @@ Article Search Request URI (sample):
 	http://api.nytimes.com/svc/search/v2/articlesearch.json?q=bitcoin&fq=bitcoin&begin_date=20090101&sort=newest&page=0&api-key=<private key here>
 	
 
-	PARSE_CONF = {'raw_data_dir': '/Users/bassemd/Projects/bitcoin-manalysis/scrappers/nyt/_raw_data/',
+	PARSE_CONF = {'raw_data_dir': '<directory>',
 				'user-agent': 'Bit-Analyzer:v0.0.1',
 				'filename': 'nyt-bitcoin',
 				'url': 'http://api.nytimes.com/svc/search/v2/articlesearch',
@@ -37,12 +37,12 @@ Article Search Request URI (sample):
 				'sort': 'newest',
 				'begin_date': 20090101,			# yyyymmdd
 				'end_date': 20150303,			# yyyymmdd
-				'api_key': '6b345c4055c2693342b87179b136e7bd:10:71712593'}
+				'api_key': ''}
 
 __Example__
 
 
-	PARSE_CONF = {'raw_data_dir': '/Users/bassemd/Projects/bitcoin-manalysis/scrappers/nyt/_raw_data/',
+	PARSE_CONF = {'raw_data_dir': '/Users/yourname/bitcoin-manalysis/scrappers/nyt/_raw_data/',
 				'user-agent': 'Bit-Analyzer:v0.0.1',
 				'filename': 'nyt-bitcoin',
 				'url': 'http://api.nytimes.com/svc/search/v2/articlesearch',
@@ -55,7 +55,7 @@ __Example__
 				'sort': 'newest',
 				'begin_date': 20090101,			# yyyymmdd
 				'end_date': 20150303,			# yyyymmdd
-				'api_key': '6b345c4055c2693342b87179b136e7bd:10:71712593'}
+				'api_key': ''}
 
 ## Risk
 
