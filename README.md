@@ -2,8 +2,21 @@
 
 This analysis **(a work in progress)** is an attempt to find a relationship between bitcoin related news and the rise or fall of the bitcoin exchange rate (BTC/USD).
 
+##Sample
 
-##DATA
+Quick sample of what we have so far, gives you a glimpse of what to expect if you want to digg in:
+
+[Bitcoin-Price-News-Impact_v0.1.2.ipynb](http://nbviewer.ipython.org/github/Link-/bitcoin-manalysis/blob/master/data_analysis/Bitcoin-Price-News-Impact_v0.1.2.ipynb)
+
+##Prerequisites
+
+* python 2.7
+* ipython (Jupyter) 3.0.0
+* [requests](http://docs.python-requests.org/en/latest/)
+* [matplotlib](http://matplotlib.org)
+* wget (for OSX use homebrew)
+
+##Data
 ####Bitcoin Data
 Download all the bitcoin price historical data. This can be found in [http://api.bitcoincharts.com/v1/csv/](http://api.bitcoincharts.com/v1/csv/)
 
