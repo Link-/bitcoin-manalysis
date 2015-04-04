@@ -9,3 +9,9 @@ _sublime/
 
 # Ignore all xmind files
 *.xmind
+
+# Ignore all pyCharm files
+.idea/
+
+# Ignore all compiled python
+*.pyc
