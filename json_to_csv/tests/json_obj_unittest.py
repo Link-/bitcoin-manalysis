@@ -59,9 +59,27 @@ class JSONobjTest(unittest.TestCase):
 	# that does not exist will raise
 	# the proper exception
 	def test_validate_file_false(self):
+		# Set the file_path variable to a known
+		# non existent file
 		self.tobj.file_path = __file__ + 'something'
+		# Check if the method raises an exception
 		self.assertRaises(Exception, lambda: self.tobj.validate_file())
 
+	# Test whether the set json file
+	# loads and can be data filled into
+	# an object
+	def test_read_json_file(self):
+		# Quick test the file size
+		# it should be greater than 0
+		self.assertGreater(self.tobj.get_file_size(), 0, 'TRJF: File is not empty!')
+		# if the JSON file is opened
+		# and read properly the method
+		# should return true since the object
+		# is not empty
+		# NOTE: we should know for a fact
+		# that the sample JSON file
+		# is NOT EMPTY
+		self.assertTrue(self.tobj.read_json())
 
 if __name__ == '__main__':
 	unittest.main()

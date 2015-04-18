@@ -3,6 +3,7 @@
 #
 
 import os
+import json
 
 class JSONobj(object):
 
@@ -29,12 +30,44 @@ class JSONobj(object):
 		# Validate size
 		if os.path.getsize(self.file_path) == 0:
 			raise Exception("File is empty")
-		else:
-			return True
+		# Return True otherwise
+		return True
 
-
+	# Getter method that
+	# returns the actual file
+	# size
+	def get_file_size(self):
+		return os.path.getsize(self.file_path)
 
 	# Getter method that returns
 	# the JSON file path
 	def get_file_path(self):
 		return self.file_path
+
+	# Set the output directory
+	# for the converted
+	# output CSV file
+	def set_output_dir(self, out_path):
+		self.out_path = out_path
+		# If parameter is empty
+		# raise an exception
+		if not self.out_path:
+			raise Exception("Output directory cannot be empty!")
+		# First check if directory
+		# exists
+		if not os.path.exists(self.out_path):
+			# if not, create it
+			os.makedirs(self.out_path)
+
+	# Method that reads the content
+	# set JSON file and stores
+	# it in an object
+	def read_json(self):
+		with open(self.file_path) as json_file:
+			# Return the JSON object
+			return json.load(json_file)
+
+	# Main converter from
+	# JSON object to CSV
+	def convert(self):
+		return ''
