@@ -4,6 +4,7 @@
 
 import os
 import json
+import jsontree
 
 class JSONobj(object):
 
