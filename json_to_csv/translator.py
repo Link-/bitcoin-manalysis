@@ -16,6 +16,7 @@ global_dictionary = {}
 
 def main():
 	local_obj = jobj.JSONobj('/Users/bassemd/Projects/bitcoin-manalysis/json_to_csv/_raw_data/hot-bitcoin1427836487.05.json')
+	# local_obj = jobj.JSONobj('/Users/bassemd/Projects/bitcoin-manalysis/json_to_csv/_raw_data/1itemonly.json')
 	print local_obj.get_file_path()
 	json_tree = local_obj.read_json()
 
